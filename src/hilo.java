@@ -24,13 +24,18 @@ public class hilo extends Thread {
                 }
             }
             C_contador.incrementar(this.contador);
-            System.out.println("ha contado "+ this.contador + " " +consonante);
+           synchronized (System.out)
+           {System.out.println("ha contado "+ this.contador + " " +consonante);}
 
 
         }
 
     }
 
+    public int get_contador(){
+        return this.contador;
+
+    }
 
 
 

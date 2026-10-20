@@ -7,7 +7,7 @@ public class Contador_de_caracteres {
         List<String> consonantes = new ArrayList<>();
 
         System.out.println("dime cinco consonantes");
-        String valido="bcdfghjklmnñpqrstvwxyz";
+        String valido="bcdfghjklmnñpqrstvwxyzBCDFGHJKLMNÑPQRSTVWXYZ";
         while (consonantes.size() < 5){
 
             String consonante = teclado.nextLine();
