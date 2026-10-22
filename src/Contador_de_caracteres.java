@@ -26,17 +26,18 @@ public class Contador_de_caracteres {
 
         contador_total contador_total = new contador_total();
 
-        List<hilo> listaHilos = new ArrayList<>();
+        List<Hilo> listaHilos = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             char c = consonantes.get(i).charAt(0);
-            hilo Hilo = new hilo(texto_plano, c,contador_total);
+            Hilo Hilo = new Hilo(texto_plano, c,contador_total);
             listaHilos.add(Hilo);
             Hilo.start();
         }
 
-            for (hilo H : listaHilos) {
+            for (Hilo H : listaHilos) {
             try {
                 H.join();
+                System.out.println("Hilo "+H.get_consonante()+" Ha contado: "+H.get_contador());
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -45,7 +46,7 @@ public class Contador_de_caracteres {
 
 
 
-        System.out.println(contador_total.getTotal());
+        System.out.println("total: "+contador_total.getTotal());
 
     }
 

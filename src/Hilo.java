@@ -1,13 +1,9 @@
-import java.util.ArrayList;
-import java.util.List;
-
-
-public class hilo extends Thread {
-    String[] texto;
-    Character consonante;
-    int contador;
+public class Hilo extends Thread {
+     private String[] texto;
+    private Character consonante;
+    private int contador;
     contador_total C_contador;
-    public hilo(String[] texto, Character consonante, contador_total C_contador){
+    public Hilo(String[] texto, Character consonante, contador_total C_contador){
         this.texto = texto;
         this.consonante = consonante;
         this.contador = 0;
@@ -23,12 +19,10 @@ public class hilo extends Thread {
 
                 }
             }
-            C_contador.incrementar(this.contador);
-           synchronized (System.out)
-           {System.out.println("ha contado "+ this.contador + " " +consonante);}
 
 
         }
+        C_contador.incrementar(this.contador);
 
     }
 
@@ -36,6 +30,11 @@ public class hilo extends Thread {
         return this.contador;
 
     }
+    public Character get_consonante(){
+        return this.consonante;
+
+    }
+
 
 
 

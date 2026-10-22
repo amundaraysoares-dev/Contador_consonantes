@@ -2,7 +2,7 @@
 
 ---
 
-### 1. Clase `hilo` (Extiende de `Thread`)
+### 1. Clase `Hilo` (Extiende de `Thread`)
 
 
 * **Variables principales** (recibe una instancia de `contador_total` para la gestión global):
@@ -28,7 +28,7 @@
 * **Variables y Métodos**:
     * Variable `total` para acumular el recuento global.
     * Método `incrementar()` protegido con `synchronized` para evitar condiciones de carrera (Race Conditions) al actualizar el total.
-    * Método `get_total()` para consultar el resultado final desde el hilo principal (`main`).
+    * Método `get_total()` para consultar el resultado final desde el Hilo principal (`main`).
 
 ![Código de la clase Contador Total](fotos/Captura%20de%20pantalla%202026-10-20%20133157.png)
 
@@ -40,7 +40,7 @@
 * **Flujo de ejecución**:
     1. **Entrada de consonantes**: Mediante un `Scanner` y un bucle, solicita al usuario introducir consonantes hasta completar un total de 5 válidas (validadas contra una lista de caracteres permitidos).
     2. **Entrada de texto**: Pide una frase o texto, el cual se procesa usando `trim()` y `split(" ")` para dividirlo en palabras y almacenarlo en un array/lista.
-    3. **Lanzamiento de hilos**: Crea un bucle que instancia un hilo por cada consonante seleccionada, pasándole su respectivo fragmento de trabajo, y los almacena en una lista.
+    3. **Lanzamiento de hilos**: Crea un bucle que instancia un Hilo por cada consonante seleccionada, pasándole su respectivo fragmento de trabajo, y los almacena en una lista.
     4. **Sincronización (`join`)**: Recorre la lista de hilos esperando a que todos terminen su ejecución (`join()`).
     5. **Resultado**: Muestra por pantalla el resultado global llamando al getter de la clase `contador_total`.
 
